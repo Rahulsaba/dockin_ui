@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import  "@/index.scss";
+import "@/index.scss";
 import localFont from 'next/font/local'
 
 // const myFont = localFont({ src: './my-font.woff2' })
@@ -10,9 +10,11 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return (  
+  return (
     <html lang="en" suppressHydrationWarning={false}>
-      <body className={'layout'}>{children}</body>
+      <body>
+        {children}
+      </body>
     </html>
   );
 }
