@@ -5,10 +5,15 @@ import Section_2 from "@/section_2/page";
 
 export default function Home() {
   return (
-    <div className={'layout'}>
+    <div>
       <NavBar />
-      <Intro/>
-      <Section_2/>
+      <div className={"layout"}>
+        <Intro />
+        <Section_2 />
+        <Section_2 />
+        <Section_2 />
+        <Section_2 />
+      </div>
     </div>
   );
 }

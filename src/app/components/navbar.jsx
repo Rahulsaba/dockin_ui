@@ -4,15 +4,15 @@ export default function NavBar() {
     return (
         <>
             <nav >
-                <div>
-                    {/* <Image
-                        src="logo/Logo.png"
+                <div className="flex">
+                    <Image
+                        src="/Logo.png"
                         alt="logo"
-                        height={150}
-                        width={200}
-                    /> */}
+                        height={33}
+                        width={180}
+                    />
                 </div>
-                <div>
+                <div className="header_right flex">
                     <a href="tell:+1 123-456-7891">
                         +123-456-7891
                     </a>
