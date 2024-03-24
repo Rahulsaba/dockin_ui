@@ -8,6 +8,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 $primary-color: #5f033c;
@@ -24,6 +25,25 @@ a {
     color: inherit;
 }
 
+.mt-1{
+    margin-top: 1rem;
+}
+
+.mt-2{
+    margin-top: 2rem;
+}
+
+.mt-3{
+    margin-top: 3rem;
+}
+
+// dynamic ah use panalam use this class and give arugument reffer 175 line class
+@mixin flex_container($flex, $justify-content, $align-items) {
+    display: $flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
 .layout {
     background-color: #ffffff;
     height: 100vh;
@@ -38,6 +58,7 @@ a {
     padding-top: 50px;
     padding-bottom: 50px;
 
+    // responsive css
     @include lg {
         max-width: 1280px;
     }
@@ -53,7 +74,7 @@ a {
 
 nav {
     background-color: $primary-color;
-    padding: 35px 200px 35px 200px;
+    padding: 30px 200px 30px 200px;
     position: fixed;
     z-index: 22222;
     width: 100%;
@@ -61,17 +82,20 @@ nav {
     justify-content: space-between;
 
     @include md {
-        padding: 20px 100px 20px 100px;
+        padding: 30px 100px 30px 100px;
     }
+
     @include sm {
-        padding: 20px;
+        padding: 25px;
     }
 }
+
+// nested css 
 
 banner {
     background-image: url(../../public/slide-1.png);
     background-repeat: no-repeat;
-    height: 70%;
+    height: 80%;
     background-size: 100% 100%;
     background-position: center center;
     color: $text-white;
@@ -87,23 +111,42 @@ banner {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        height: 100%;
     }
+
+   
+   
 }
 
-.launch :is(span) {
-    border: 1px solid #cfd17d;
-    padding: 15px;
+
+   
+
+
+.launch {
+
+  
+// is give priority cant over ride "where " use for over ride again
+
+    :is(span) {
+        border: 1px solid #cfd17d;
+        padding: 15px;
+        font-weight: bolder;
+        font-size: 2rem;
+    }
+
 }
 
 .launch span:nth-child(1) {
     background: #cfd17d;
     border-radius: 9px 0 0 9px;
+    padding: 15px 20px 15px 20px;
     color: $text-violet;
 }
 
 .launch span:nth-child(2) {
     background: transparent;
     border-radius: 0 9px 9px 0;
+    padding: 15px 25px 15px 25px;
     color: #cfd17d;
 }
 
@@ -130,8 +173,28 @@ banner {
 }
 
 
-.flex{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.flex_nav {
+    @include flex_container(flex, center, center);
+
+}
+
+img {
+    max-width: 100%;
+}
+
+.slide_image {
+
+    position: absolute;
+    transform: translate(-50%, 20%);
+
+    @include md{
+
+        transform: translate(-50%, 50%);
+    }
+    @include sm{
+
+        transform: translate(-50%, 65%);
+    }
+
+
 }
